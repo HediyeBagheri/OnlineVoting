@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Services.Client" Version="16.205.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.11">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.11" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.14" />
+		<PackageReference Include="Microsoft.AspNetCore.Authorization" Version="6.0.14" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OnlineVoting.Application.Contract\OnlineVoting.Application.Contract.csproj" />
+    <ProjectReference Include="..\OnlineVoting.Application\OnlineVoting.Application.csproj" />
+    <ProjectReference Include="..\OnlineVoting.Model\OnlineVoting.Model.csproj" />
+  </ItemGroup>
+
+</Project>
