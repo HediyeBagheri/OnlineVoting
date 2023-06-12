@@ -22,7 +22,7 @@ namespace OnlineVoting.Model
         public DateTime EndTime
         {
             get { return endTime; }
-          private set { endTime = StartTime.AddMinutes(3); }
+            private set { endTime = StartTime.AddMinutes(3); }
         }
         public ICollection<Vote> Votes { get; set; }
     }

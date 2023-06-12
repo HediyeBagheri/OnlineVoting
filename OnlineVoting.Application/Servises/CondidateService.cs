@@ -28,12 +28,8 @@ namespace OnlineVoting.Application.Servises
         //TODO
         public void Add(CondidateAddDTO condidateAddDTO)
         {
-            var adv = condidateAddDTO.Advisers.Count;
-            for (adv = 0; adv<3; adv++ )
-            {
-                var condidate = mapper.Map<Condidate>(condidateAddDTO);
+             var condidate = mapper.Map<Condidate>(condidateAddDTO);
                  repository.Add(condidate);
-            }      
         }
 
         public int Delete(int id)
