@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OnlineVoting.InfraSturacture.Context;
 
@@ -11,9 +12,10 @@ using OnlineVoting.InfraSturacture.Context;
 namespace OnlineVoting.InfraSturacture.Migrations
 {
     [DbContext(typeof(OnlineVotingContext))]
-    partial class OnlineVotingContextModelSnapshot : ModelSnapshot
+    [Migration("20230613094515_Editauthorize")]
+    partial class Editauthorize
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

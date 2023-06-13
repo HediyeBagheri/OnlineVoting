@@ -43,6 +43,7 @@ namespace OnlineVoting.InfraSturacture.Context
             modelBuilder.Entity<ApplicationUserRole>().HasOne(x => x.User);
             modelBuilder.Entity<ApplicationUserRole>().HasOne(x => x.Role);
 
+
             modelBuilder.Ignore<IdentityUserClaim<string>>();
             modelBuilder.Ignore<IdentityRoleClaim<string>>();
             modelBuilder.Ignore<IdentityUserToken<string>>();

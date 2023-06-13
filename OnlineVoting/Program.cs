@@ -57,7 +57,8 @@ builder.Services.AddHttpClient();
 
 RegisterServices(builder);
 
-//builder.Services.AddDbContext<OnlineVotingContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("OnlineVoting")));
+//builder.Services.AddDbContext<OnlineVotingContext>(
+//x => x.UseSqlServer(builder.Configuration.GetConnectionString("OnlineVoting")));
 builder.Services.AddDbContextPool<OnlineVotingContext>(
     o => o.UseSqlServer(builder.Configuration.GetConnectionString("OnlineVoting")));
 

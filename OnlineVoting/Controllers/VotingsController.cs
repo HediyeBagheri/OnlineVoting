@@ -21,10 +21,10 @@ public class VotingsController : ControllerBase
 
     [Authorize("SupportPolicy")]
     [HttpPost]
-    public IActionResult Add([FromForm] VotingAddDTO votingService)
+    public IActionResult Add([FromForm] VotingAddDTO votingAddDTO)
     {
-        VotingService.Add(votingService);
-        return Created("", votingService);
+        VotingService.Add(votingAddDTO);
+        return Created("", votingAddDTO);
 
     }
 

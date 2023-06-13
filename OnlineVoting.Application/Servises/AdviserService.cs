@@ -15,11 +15,21 @@ public class AdviserService : IAdviserService
         this.mapper = mapper;
 
     }
-    public void Add(AdviserAddDTO adviserAddDTO)
+    public bool Add(List<AdviserAddDTO> adviserAddDTOs)
     {
-        
-            var adviser = mapper.Map<Adviser>(adviserAddDTO);
-            repository.Add(adviser);
+         
+        if (adviserAddDTOs != null && adviserAddDTOs.Count() < 3)
+        {
+            var advisers = mapper.Map<List<Adviser>>(adviserAddDTOs);
+           // adviserAddDTOs.ToList().ForEach(x => repository.Add(adviser));
+           foreach(var ad in advisers)
+           {
+               repository.Add(ad);
+           }
+            return true;
+        }
+        else
+            return false;
     }
 
     public int Delete(int id)

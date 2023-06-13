@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.Options;
+using OnlineVoting.Application.Contract.DTOs.Advisers;
 using OnlineVoting.Application.Contract.DTOs.Condidates;
 using OnlineVoting.Application.Contract.IServices;
 using OnlineVoting.InfraSturacture.IRepositories;
@@ -26,10 +27,15 @@ namespace OnlineVoting.Application.Servises
 
         }
         //TODO
-        public void Add(CondidateAddDTO condidateAddDTO)
+        public bool Add(CondidateAddDTO condidateAddDTO)
         {
-             var condidate = mapper.Map<Condidate>(condidateAddDTO);
-                 repository.Add(condidate);
+            if (condidateAddDTO != null )
+            {
+                var condidate = mapper.Map<Condidate>(condidateAddDTO);
+                repository.Add(condidate);
+                return true;
+            }
+            return false;
         }
 
         public int Delete(int id)

@@ -10,7 +10,7 @@ namespace OnlineVoting.Application.Contract.IServices
 {
     public interface ICondidateService
     {
-        void Add(CondidateAddDTO condidateAddDTO);
+        bool Add(CondidateAddDTO condidateAddDTO);
         public int Delete(int id);
         List<Condidate> GetAll();
         List<Condidate> Search(string keyWord);

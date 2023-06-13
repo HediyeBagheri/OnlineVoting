@@ -11,7 +11,7 @@ namespace OnlineVoting.Application.Contract.DTOs.Condidates
     {
         public int Id { get; set; }
 
-        [Required, StringLength(128)]
+        [Required, StringLength(64)]
         public string Name { get; set; }
 
         [Required, StringLength(128)]

@@ -17,13 +17,7 @@ namespace OnlineVoting.Model
 
         [Required]
         public DateTime StartTime { get; set; }
-        private DateTime endTime;
-
-        public DateTime EndTime
-        {
-            get { return endTime; }
-            private set { endTime = StartTime.AddMinutes(3); }
-        }
+        public DateTime endTime { get; set; }
         public ICollection<Vote> Votes { get; set; }
     }
 }

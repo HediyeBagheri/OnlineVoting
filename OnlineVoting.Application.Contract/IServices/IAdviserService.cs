@@ -3,7 +3,7 @@ using OnlineVoting.Model;
 
 public interface IAdviserService
 {
-    void Add(AdviserAddDTO adviserAddDTO);
+    bool Add(List<AdviserAddDTO> adviserAddDTOs);
     public int Delete(int id);
     List<Adviser> GetAll();
     List<Adviser> Search(string keyWord);

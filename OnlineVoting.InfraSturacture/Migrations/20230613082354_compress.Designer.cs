@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OnlineVoting.InfraSturacture.Context;
 
@@ -11,9 +12,10 @@ using OnlineVoting.InfraSturacture.Context;
 namespace OnlineVoting.InfraSturacture.Migrations
 {
     [DbContext(typeof(OnlineVotingContext))]
-    partial class OnlineVotingContextModelSnapshot : ModelSnapshot
+    [Migration("20230613082354_compress")]
+    partial class compress
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -102,8 +104,8 @@ namespace OnlineVoting.InfraSturacture.Migrations
 
                     b.Property<string>("CompressName")
                         .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("NVarChar(64)");
+                        .HasMaxLength(128)
+                        .HasColumnType("NVarChar(128)");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -112,8 +114,8 @@ namespace OnlineVoting.InfraSturacture.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("NVarChar(64)");
+                        .HasMaxLength(128)
+                        .HasColumnType("NVarChar(128)");
 
                     b.HasKey("Id");
 

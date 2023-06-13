@@ -1,5 +1,7 @@
-﻿using OnlineVoting.InfraSturacture.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using OnlineVoting.InfraSturacture.Context;
 using OnlineVoting.Model;
+using System.Security.Cryptography.X509Certificates;
 
 namespace OnlineVoting.InfraSturacture.Repositories
 {
@@ -17,10 +19,17 @@ namespace OnlineVoting.InfraSturacture.Repositories
             return context.Adviser;
         }
 
-        public int Add(Adviser adviser)
+        public bool Add(Adviser adviser)
         {
-            context.Adviser.Add(adviser);
-            return context.SaveChanges();
+            if (adviser != null)
+            {
+                    context.Adviser.Add(adviser);
+                    context.SaveChanges();
+                return true;
+            }
+            else
+                return false;
+            
         }
 
         public int Delete(int id)

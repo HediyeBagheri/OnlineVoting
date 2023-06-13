@@ -17,6 +17,7 @@ public class VotingRepository : IVotingRepository
 
     public int Add(Voting voting)
     {
+        voting.endTime = voting.StartTime.AddMinutes(3);
         context.Voting.Add(voting);
         return context.SaveChanges();
     }

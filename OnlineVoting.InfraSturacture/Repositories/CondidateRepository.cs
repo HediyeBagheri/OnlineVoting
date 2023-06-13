@@ -3,6 +3,7 @@ using OnlineVoting.InfraSturacture.IRepositories;
 using OnlineVoting.Model;
 using System;
 using System.Collections.Generic;
+using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,10 +24,17 @@ namespace OnlineVoting.InfraSturacture.Repositories
             return context.Condidate;
         }
 
-        public int Add(Condidate condidate)
+        public bool Add(Condidate condidate)
         {
-            context.Condidate.Add(condidate);
-           return context.SaveChanges();
+            if(condidate is not null)
+            {
+                condidate.CompressName = condidate.Name;
+                context.Condidate.Add(condidate);
+                context.SaveChanges();
+                return true;
+            }
+
+            return false;
         }
 
         public int Delete(int id)
@@ -40,5 +48,7 @@ namespace OnlineVoting.InfraSturacture.Repositories
         {
             return context.Condidate.Where(p => p.Name.Contains(keyword));
         }
+
+        
     }
 }

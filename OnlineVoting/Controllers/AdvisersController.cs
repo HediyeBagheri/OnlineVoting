@@ -21,12 +21,12 @@ namespace OnlineVoting.EndPoint.Controllers
             return Ok(AdviserService.GetAll());
         }
 
-        [Authorize("SupportPolicy")]
+        //[Authorize("SupportPolicy")]
         [HttpPost]
-        public IActionResult Add([FromForm] AdviserAddDTO adviserService)
+        public IActionResult Add( List<AdviserAddDTO> adviserDtos)
         {
-            AdviserService.Add(adviserService);
-            return Created("", adviserService);
+            AdviserService.Add(adviserDtos);
+            return Created("", adviserDtos);
 
         }
 

@@ -22,7 +22,7 @@ namespace OnlineVoting.EndPoint.Controllers
         {
             return Ok(CondidateService.GetAll());
         }
-        [Authorize("SupportPolicy")]
+        //[Authorize("SupportPolicy")]
         [HttpPost]
         public IActionResult Add([FromForm] CondidateAddDTO condidateAddDTO)
         {
