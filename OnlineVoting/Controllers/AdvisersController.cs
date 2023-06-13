@@ -30,6 +30,12 @@ namespace OnlineVoting.EndPoint.Controllers
 
         }
 
+        [HttpPut]
+        public IActionResult Update(int id, AdviserAddDTO adviserDtos)
+        {
+            return Ok(AdviserService.Update(id, adviserDtos));
+        }
+
         [Authorize("SupportPolicy")]
         [HttpDelete]
         public IActionResult Delete(int id)

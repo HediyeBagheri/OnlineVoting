@@ -32,6 +32,24 @@ namespace OnlineVoting.InfraSturacture.Repositories
             
         }
 
+        public bool Update(int id, Adviser adviser)
+        {
+            if (adviser is null)
+                return false;
+            else
+            {
+                var adv = context.Adviser.First(x => x.Id == id);
+                if (adv != null)
+                {
+                    adv.Name = adviser.Name;
+                    adv.LastName = adviser.LastName;
+                }
+                context.Adviser.Update(adv);
+                context.SaveChanges();
+                return true;
+            }
+        }
+
         public int Delete(int id)
         {
             var adviser = context.Adviser.First(x => x.Id == id);

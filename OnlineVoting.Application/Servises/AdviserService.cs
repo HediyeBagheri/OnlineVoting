@@ -25,10 +25,21 @@ public class AdviserService : IAdviserService
            {
                repository.Add(ad);
            }
+            if (adviserAddDTOs.Count() == 1)
+            {
+                var adviser = mapper.Map<Adviser>(new AdviserAddDTO());
+            }
             return true;
         }
+        
         else
             return false;
+     }
+
+    public bool Update(int id, AdviserAddDTO adviserAddDTO)
+    {
+        var adv = mapper.Map<Adviser>(adviserAddDTO);
+        return repository.Update(id, adv);
     }
 
     public int Delete(int id)
