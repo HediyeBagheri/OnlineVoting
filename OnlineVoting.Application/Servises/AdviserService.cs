@@ -21,7 +21,6 @@ public class AdviserService : IAdviserService
         if (adviserAddDTOs != null && adviserAddDTOs.Count() < 3)
         {
             var advisers = mapper.Map<List<Adviser>>(adviserAddDTOs);
-           // adviserAddDTOs.ToList().ForEach(x => repository.Add(adviser));
            foreach(var ad in advisers)
            {
                repository.Add(ad);
