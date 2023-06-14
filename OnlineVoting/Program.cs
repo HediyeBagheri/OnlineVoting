@@ -18,6 +18,7 @@ using System.Text;
 using TokenHandler = OnlineVoting.EndPoint.Securities.TokenHandler;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddSingleton<DapperContext>();
 
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(options =>
@@ -57,8 +58,12 @@ builder.Services.AddHttpClient();
 
 RegisterServices(builder);
 
+
 //builder.Services.AddDbContext<OnlineVotingContext>(
 //x => x.UseSqlServer(builder.Configuration.GetConnectionString("OnlineVoting")));
+
+builder.Services.AddSingleton<DapperContext>();
+
 builder.Services.AddDbContextPool<OnlineVotingContext>(
     o => o.UseSqlServer(builder.Configuration.GetConnectionString("OnlineVoting")));
 
@@ -136,4 +141,8 @@ static void RegisterServices(WebApplicationBuilder builder)
 
     builder.Services.AddScoped<IVotingRepository, VotingRepository>();
     builder.Services.AddScoped<IVotingService, VotingService>();
+
+    builder.Services.AddScoped<IVoteRepository, VoteRepository>();
+    builder.Services.AddScoped<IVoteService, VoteService>();
+
 }

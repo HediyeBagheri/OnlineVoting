@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using OnlineVoting.Application.Contract.DTOs;
 using OnlineVoting.Application.Contract.DTOs.Advisers;
 using OnlineVoting.Application.Contract.DTOs.Condidates;
 using OnlineVoting.Application.Contract.DTOs.Voting;
@@ -21,6 +22,9 @@ namespace OnlineVoting.Application.Contract.MappingConfoguration
             CreateMap<Voting, VotingDTO>();
             CreateMap<VotingDTO, Voting>();
             CreateMap<VotingAddDTO, Voting>();
+
+            CreateMap<Vote, VoteDTO>();
+            CreateMap<VoteDTO, Vote>();
         }
     }
 }
