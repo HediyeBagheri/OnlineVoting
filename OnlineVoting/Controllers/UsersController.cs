@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using OnlineVoting.Application.Contract.DTOs.Condidates;
+﻿using Microsoft.AspNetCore.Mvc;
 using OnlineVoting.Application.Contract.DTOs.Users;
 using OnlineVoting.Application.Contract.IServices.Users;
 
@@ -31,6 +29,6 @@ namespace OnlineVoting.EndPoint.Controllers
             return Ok();
         }
 
-        
+
     }
 }

@@ -16,7 +16,7 @@ namespace OnlineVoting.Model
         public string Name { get; set; }
 
         [StringLength(64)]
-        public string CompressName { get; set; } 
+        public string CompressName { get; set; }
 
         [Required, StringLength(128)]
         public string LastName { get; set; }

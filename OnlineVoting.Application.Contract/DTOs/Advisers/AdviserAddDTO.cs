@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace OnlineVoting.Application.Contract.DTOs.Advisers
 {
@@ -14,7 +9,6 @@ namespace OnlineVoting.Application.Contract.DTOs.Advisers
 
         [Required, StringLength(128)]
         public string LastName { get; set; }
-
         public int CondidateId { get; set; }
     }
 }

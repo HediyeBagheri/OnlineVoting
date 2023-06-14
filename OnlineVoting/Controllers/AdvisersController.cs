@@ -23,17 +23,23 @@ namespace OnlineVoting.EndPoint.Controllers
 
         //[Authorize("SupportPolicy")]
         [HttpPost]
-        public IActionResult Add( List<AdviserAddDTO> adviserDtos)
+        public IActionResult Add(List<AdviserAddDTO> adviserDtos)
         {
-            AdviserService.Add(adviserDtos);
-            return Created("", adviserDtos);
+            return Ok(AdviserService.Add(adviserDtos));
+           // return Created("", adviserDtos);
 
         }
 
         [HttpPut]
-        public IActionResult Update(int id, AdviserAddDTO adviserDtos)
+        public IActionResult Update(int id, List<AdviserDTO> adviserDTOs)
         {
-            return Ok(AdviserService.Update(id, adviserDtos));
+            return Ok(AdviserService.Update(id, adviserDTOs));
+        }
+
+        [HttpPatch]
+        public IActionResult UpdateOneAdviser(int id, AdviserAddDTO adviserAddDTO)
+        {
+            return Ok(AdviserService.UpdateOneAdviser(id, adviserAddDTO));
         }
 
         [Authorize("SupportPolicy")]

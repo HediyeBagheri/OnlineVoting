@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnlineVoting.Application.Contract.DTOs.Condidates;
 using OnlineVoting.Application.Contract.IServices;
@@ -31,7 +30,7 @@ namespace OnlineVoting.EndPoint.Controllers
 
         }
 
-        [Authorize("SupportPolicy")]
+        //[Authorize("SupportPolicy")]
         [HttpDelete]
         public IActionResult Delete(int id)
         {

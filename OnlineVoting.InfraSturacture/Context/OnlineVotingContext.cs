@@ -2,14 +2,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using OnlineVoting.InfraSturacture.IRepositories;
 using OnlineVoting.Model;
 using OnlineVoting.Model.IdentityModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineVoting.InfraSturacture.Context
 {

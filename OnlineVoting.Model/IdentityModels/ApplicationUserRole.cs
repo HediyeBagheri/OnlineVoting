@@ -1,5 +1,5 @@
-﻿using OnlineVoting.Model.IdentityModels;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
+using OnlineVoting.Model.IdentityModels;
 
 public class ApplicationUserRole : IdentityUserRole<string>
 {

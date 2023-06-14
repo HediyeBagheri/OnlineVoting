@@ -96,7 +96,8 @@ builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("CorsPolicy", builder => {
+    options.AddPolicy("CorsPolicy", builder =>
+    {
         builder.WithOrigins("http://localhost:5196")
         .AllowAnyMethod()
         .AllowAnyHeader()
@@ -125,7 +126,7 @@ static void RegisterServices(WebApplicationBuilder builder)
 {
     builder.Services.AddScoped<IUserService, UserService>();
     builder.Services.AddScoped<IUserContext, UserContext>();
-    builder.Services.AddSingleton<ITokenHandler,TokenHandler>();
+    builder.Services.AddSingleton<ITokenHandler, TokenHandler>();
 
     builder.Services.AddScoped<ICondidateRepository, CondidateRepository>();
     builder.Services.AddScoped<ICondidateService, CondidateService>();

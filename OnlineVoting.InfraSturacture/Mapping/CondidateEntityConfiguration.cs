@@ -1,14 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using OnlineVoting.Model;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.IO.Compression;
-using System.Linq;
-using System.Reflection.Metadata;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CinemaTicket.InfraStructure.Mapping
 {
@@ -19,7 +14,7 @@ namespace CinemaTicket.InfraStructure.Mapping
             builder.Property(x => x.Id);
             builder.HasKey(x => x.Id);
 
-            builder.Property(x=> x.Name)
+            builder.Property(x => x.Name)
                 .HasColumnType<string>(nameof(SqlDbType.NVarChar))
                 .HasMaxLength(64)
                 .IsRequired();

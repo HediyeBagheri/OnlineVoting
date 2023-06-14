@@ -19,7 +19,7 @@ public class VotingsController : ControllerBase
         return Ok(VotingService.GetAll());
     }
 
-    [Authorize("SupportPolicy")]
+    //[Authorize("SupportPolicy")]
     [HttpPost]
     public IActionResult Add([FromForm] VotingAddDTO votingAddDTO)
     {

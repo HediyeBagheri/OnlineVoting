@@ -1,19 +1,9 @@
 ﻿
 using Microsoft.AspNetCore.Identity;
-using OnlineVoting.Application.Contract.DTOs.Advisers;
-using OnlineVoting.Application.Contract.DTOs.Condidates;
 using OnlineVoting.Application.Contract.DTOs.Users;
 using OnlineVoting.Application.Contract.IServices.Users;
 using OnlineVoting.InfraSturacture.Context;
-using OnlineVoting.InfraSturacture.IRepositories;
-using OnlineVoting.InfraSturacture.Repositories;
-using OnlineVoting.Model;
 using OnlineVoting.Model.IdentityModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CinamaTicket.Application.Services.Users
 {

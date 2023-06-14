@@ -1,6 +1,4 @@
-﻿using OnlineVoting.Application.Contract.DTOs.Advisers;
-using OnlineVoting.Application.Contract.DTOs.Condidates;
-using OnlineVoting.Application.Contract.DTOs.Users;
+﻿using OnlineVoting.Application.Contract.DTOs.Users;
 
 namespace OnlineVoting.Application.Contract.IServices.Users
 {
@@ -8,6 +6,6 @@ namespace OnlineVoting.Application.Contract.IServices.Users
     {
         string Login(LoginDTO dto);
         bool Register(RegisterDTO dto);
-         
+
     }
 }

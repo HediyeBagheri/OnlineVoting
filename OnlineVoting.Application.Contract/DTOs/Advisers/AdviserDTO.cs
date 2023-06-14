@@ -10,4 +10,5 @@ public class AdviserDTO
 
     [Required, StringLength(128)]
     public string LastName { get; set; }
+    public int CondidateId { get; set; }
 }

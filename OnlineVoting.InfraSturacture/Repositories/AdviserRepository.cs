@@ -1,7 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using OnlineVoting.InfraSturacture.Context;
+﻿using OnlineVoting.InfraSturacture.Context;
 using OnlineVoting.Model;
-using System.Security.Cryptography.X509Certificates;
 
 namespace OnlineVoting.InfraSturacture.Repositories
 {
@@ -23,16 +21,50 @@ namespace OnlineVoting.InfraSturacture.Repositories
         {
             if (adviser != null)
             {
-                    context.Adviser.Add(adviser);
-                    context.SaveChanges();
+                context.Adviser.Add(adviser);
+                context.SaveChanges();
                 return true;
             }
             else
                 return false;
-            
+
         }
 
         public bool Update(int id, Adviser adviser)
+        {
+            if (adviser is null)
+                return false;
+            else
+            {
+                var adv = context.Adviser.First(x => x.CondidateId == id);
+                if (adv != null)
+                {
+                    adv.Name = adviser.Name;
+                    adv.LastName = adviser.LastName;
+                }
+                context.Adviser.Update(adv);
+                context.SaveChanges();
+                return true;
+            }
+        }
+        public bool UpdateSecIndex(int id, Adviser adviser)
+        {
+            if (adviser is null)
+                return false;
+            else
+            {
+                var adv = context.Adviser.OrderByDescending(x=>x.Id).First(x => x.CondidateId == id);
+                if (adv != null)
+                {
+                    adv.Name = adviser.Name;
+                    adv.LastName = adviser.LastName;
+                }
+                context.Adviser.Update(adv);
+                context.SaveChanges();
+                return true;
+            }
+        }
+        public bool UpdateOneAdviser(int id, Adviser adviser)
         {
             if (adviser is null)
                 return false;
@@ -49,6 +81,7 @@ namespace OnlineVoting.InfraSturacture.Repositories
                 return true;
             }
         }
+
 
         public int Delete(int id)
         {

@@ -1,16 +1,8 @@
 ﻿using AutoMapper;
-using Microsoft.Extensions.Options;
-using OnlineVoting.Application.Contract.DTOs.Advisers;
 using OnlineVoting.Application.Contract.DTOs.Condidates;
 using OnlineVoting.Application.Contract.IServices;
 using OnlineVoting.InfraSturacture.IRepositories;
-using OnlineVoting.InfraSturacture.Repositories;
 using OnlineVoting.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineVoting.Application.Servises
 {
@@ -29,7 +21,7 @@ namespace OnlineVoting.Application.Servises
         //TODO
         public bool Add(CondidateAddDTO condidateAddDTO)
         {
-            if (condidateAddDTO != null )
+            if (condidateAddDTO != null)
             {
                 var condidate = mapper.Map<Condidate>(condidateAddDTO);
                 repository.Add(condidate);
@@ -48,7 +40,7 @@ namespace OnlineVoting.Application.Servises
             var condidates = repository.GetAll().ToList();
             return mapper.Map<List<Condidate>>(condidates);
         }
-        
+
         public List<Condidate> Search(string keyWord)
         {
             var condidate = repository.Search(keyWord);

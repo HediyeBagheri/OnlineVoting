@@ -1,12 +1,7 @@
-﻿using OnlineVoting.InfraSturacture.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using OnlineVoting.InfraSturacture.Context;
 using OnlineVoting.InfraSturacture.IRepositories;
 using OnlineVoting.Model;
-using System;
-using System.Collections.Generic;
-using System.IO.Compression;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineVoting.InfraSturacture.Repositories
 {
@@ -26,7 +21,7 @@ namespace OnlineVoting.InfraSturacture.Repositories
 
         public bool Add(Condidate condidate)
         {
-            if(condidate is not null)
+            if (condidate is not null)
             {
                 condidate.CompressName = condidate.Name;
                 context.Condidate.Add(condidate);
@@ -43,12 +38,13 @@ namespace OnlineVoting.InfraSturacture.Repositories
             context.Condidate.Remove(condidate);
             return context.SaveChanges();
         }
+       
 
         public IQueryable<Condidate> Search(string keyword)
         {
             return context.Condidate.Where(p => p.Name.Contains(keyword));
         }
 
-        
+
     }
 }
